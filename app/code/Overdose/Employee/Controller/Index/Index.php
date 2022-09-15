@@ -2,14 +2,20 @@
 
 namespace Overdose\Employee\Controller\Index;
 
-use Magento\Framework\Controller\ResultFactory;
+use Magento\Framework\App\Action\HttpGetActionInterface;
+use Magento\Framework\View\Result\PageFactory;
 
-Class Index extends \Magento\Framework\App\Action\Action
+class Index implements HttpGetActionInterface
 {
+    protected PageFactory $result;
+
+    public function __construct(PageFactory $result)
+    {
+        $this->result = $result;
+    }
+
     public function execute()
     {
-        return $this->resultFactory->create(ResultFactory::TYPE_PAGE);
+        return $this->result->create();
     }
 }
-
-
