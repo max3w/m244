@@ -1,9 +1,14 @@
 <?php
-
+// variant 2 new
 /**
- * @var Overdose\Employee\Block\Overdose $block
+ * @var Overdose\Employee\ViewModel\One $viewModel
+ * @var Magento\Framework\View\Element\Template $block
  */
 
-echo $block->doSomethingImportant(); ?>
+$viewModel = $block->getData('view_model'); // view_model - нейм аргументу в xml
 
-<span>Hello words</span>
+echo $viewModel->iAmViewModel(); //var2
+
+?>
+
+<p>Hello words</p>

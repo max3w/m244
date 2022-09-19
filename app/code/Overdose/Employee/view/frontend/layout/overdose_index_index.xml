@@ -5,6 +5,9 @@
             <block class="Overdose\Employee\Block\Overdose"
                    name="homepage-block"
                    template="Overdose_Employee::homepage.phtml">
+                <arguments>
+                    <argument name="view_model" xsi:type="object">Overdose\Employee\ViewModel\One</argument>
+                </arguments>
             </block>
         </referenceContainer>
     </body>
