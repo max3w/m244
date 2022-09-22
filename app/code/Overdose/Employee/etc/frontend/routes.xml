@@ -5,5 +5,8 @@
         <route id="overdose" frontName="overdose">
             <module name="Overdose_Employee" />
         </route>
+        <route id="landing" frontName="landing">
+            <module name="Overdose_Employee" />
+        </route>
     </router>
 </config>
