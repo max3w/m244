@@ -10,7 +10,24 @@ $viewModel = $block->getData('view_model'); // view_model - нейм аргум�
 echo $viewModel->iAmViewModel(); //var2
 
 //Call new function with write db
-echo $viewModel->saveNewFriend('Ivan','60','Cool guy');
+try {
+    echo $viewModel->saveNewFriend('Ivan', '60', 'Cool guy');
+} catch (\Magento\Framework\Exception\AlreadyExistsException $e) {
+}
+
+// Return collection product
+//var_dump($viewModel->getProductCollection());
+
+// Повернути всіх друзів з таблиці
+echo "<br>";
+var_dump($viewModel->gelAllFriends());
+echo "<br>";
+
+$productCollection = $viewModel->getProductCollection();
+foreach ($productCollection as $product) {
+    print_r($product->getData()['name']);
+    //echo "<br>";
+}
 
 ?>
 
